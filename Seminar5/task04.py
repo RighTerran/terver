@@ -12,21 +12,6 @@ import scipy.stats as stats
 a = 0.05
 array1 = np.array([172, 177, 158, 170, 178, 175, 164, 160, 169, 165])
 array2 = np.array([173, 175, 162, 174, 175, 168, 155, 170, 160, 163])
-# n = len(array1)
-# t1 = (np.mean(array1) - np.mean(array2)) / math.sqrt(
-#     (math.pow(np.std(array1, ddof=1), 2) / n) + (math.pow(np.std(array2, ddof=1), 2) / n))
-# print(f'Наблюдаемое значение t-критерия = {t1}')
-#
-# print(f'Среднее роста матерей = {np.mean(array1)}')
-# print(f'Среднее взрослых дочерей = {np.mean(array2)}')
-# print(f'Среднее квадратичное отклонение = {np.std(array1, ddof=1)}')
-# print(f'Среднее квадратичное отклонение = {np.std(array2, ddof=1)}')
-#
-# t2 = stats.t.ppf(a / 2, df=2 * (n - 1))
-# t3 = stats.t.ppf(1 - (a / 2), df=2 * (n - 1))
-# print(f'Табличное значение t-критерия = {t2, t3}')
-# print(
-#     f'Нулевая гипотеза принимается на уровне значимости {a} так как {abs(t1)} < {abs(t2)} = {t1 < abs(t2)}, статистически значимых различий в росте дочерей нет')
 
 result=stats.ttest_rel(a=array1,b=array2)
 print(f'Результат: {result}\nНулевая гипотеза принимается на уровне значимости {a} так как pvalue > {a}, статистически значимых различий в росте дочерей нет')
